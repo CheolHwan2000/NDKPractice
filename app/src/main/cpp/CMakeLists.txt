@@ -35,3 +35,15 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         # List libraries link to the target library
         android
         log)
+add_library(
+        native-lib
+        SHARED
+        native-lib.cpp)
+
+find_library(
+        log-lib
+        log)
+
+target_link_libraries(
+        native-lib
+        ${log-lib})
